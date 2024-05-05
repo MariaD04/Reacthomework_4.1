@@ -26,12 +26,11 @@ export const ColorConverter = () => {
     useEffect(() => {
         if (form.rgb != 'Ошибка!') {
             document.body.style.backgroundColor = form.rgb;
-        } else {
-            form.rgb = 'rgba(197, 11, 11, 0.507)'
-            document.body.style.backgroundColor = form.rgb;
+        } else if (form.rgb == 'Ошибка!') {
+            document.body.style.backgroundColor = 'rgba(197, 11, 11, 0.507)';
         }
         
-    }, [form.rgb])
+    })
     
 
     const handleColorChange = (event: React.FormEvent<HTMLFormElement>) => {
